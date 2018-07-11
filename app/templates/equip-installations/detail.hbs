@@ -1,0 +1,17 @@
+
+
+<ul>
+  <li>equipmentid: {{model.equipmentid}}</li>
+  <li>category: {{model.category}}</li>
+  <li>modelname: {{model.modelname}}</li>
+  <li>serialnumber: {{model.serialnumber}}</li>
+  <li>ondate: {{moment-format (utc model.ondate)}}</li>
+  <li>offdate: {{if model.offdate (moment-format (utc model.offdate))}}</li>
+  <li>siteid: {{model.siteid}}</li>
+  <li>netcode: {{model.netcode}}</li>
+  <li>lookupcode: {{model.lookupcode}}</li>
+  <li>latitude: {{model.latitude}}</li>
+  <li>longitude: {{model.longitude}}</li>
+</ul>
+
+{{outlet}}

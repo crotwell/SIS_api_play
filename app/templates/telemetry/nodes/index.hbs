@@ -1,0 +1,32 @@
+
+<h3>Telemetry Nodes</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Port</th>
+    <th>Port Desc</th>
+    <th>IP</th>
+    <th>Created By</th>
+    <th>Created On</th>
+    <th>Modified By</th>
+    <th>Modified On</th>
+    <th>Site Epoch</th>
+    <th>Equip Inst.</th>
+  </tr>
+  {{#each model as |s|}}
+  <tr><td>{{s.id}}</td>
+    <td>{{s.port}}</td>
+    <td>{{s.portdescription}}</td>
+    <td>{{s.ipaddresses}}</td>
+    <td>{{s.createdby}}</td>
+    <td>{{moment-format (utc s.datecreated)}}</td>
+    <td>{{s.modifiedby}}</td>
+    <td>{{moment-format (utc s.datemodified)}}</td>
+    <td>{{#link-to 'sites.detail' s.siteepoch}}{{s.siteepoch.id}}{{/link-to}}</td>
+    <td>{{#link-to 'equip-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
+  </tr>
+  {{/each}}
+</table>
+
+{{outlet}}

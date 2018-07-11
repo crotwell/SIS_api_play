@@ -1,0 +1,29 @@
+
+{{#if isLoggedIn}}
+<button {{action "invalidate"}}>Logout</button>
+{{else}}
+<form {{action 'authenticate' on='submit'}}>
+  <label for="username">Login</label>
+  {{input id='username' placeholder='Enter Login' value=username}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <button type="submit">Login</button>
+</form>
+{{/if}}
+
+
+{{#if isLoggedIn}}
+<h3>Login Successful</h3>
+{{else}}
+<h3>Login Failed</h3>
+Message: <code>{{failureMessage}}</code>
+{{/if}}
+
+<ul>
+  <li>Token Header: <pre>{{prettyTokenHeader}}</pre></li>
+  <li>Token Payload: <pre>{{prettyTokenPayload}}</pre></li>
+  <li>Token Signature: <code>{{decodedToken.signature}}</code></li>
+  <li>Token Expires: {{if decodedToken.payload.exp (moment-format (utc (unix decodedToken.payload.exp)))}}</li>
+  <li>Message: <code>{{failureMessage}}</code></li>
+  <li>Raw Token: <code>{{myoldToken}}</code></li>
+</ul>

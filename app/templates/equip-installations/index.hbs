@@ -1,0 +1,35 @@
+
+
+<table>
+  <tr>
+      <th>equipmentid</th>
+      <th>category</th>
+      <th>modelname</th>
+      <th>serialnumber</th>
+      <th>ondate</th>
+      <th>offdate</th>
+      <th>siteid</th>
+      <th>netcode</th>
+      <th>lookupcode</th>
+      <th>latitude</th>
+      <th>longitude</th>
+  </tr>
+  {{#each model as |s|}}
+  <tr>
+    <td> {{s.equipmentid}}</td>
+    <td> {{s.category}}</td>
+    <td> {{s.modelname}}</td>
+    <td> {{s.serialnumber}}</td>
+    <td> {{moment-format (utc s.ondate)}}</td>
+    <td> {{if s.offdate (moment-format (utc s.offdate))}}</td>
+    <td> {{s.siteid}}</td>
+    <td> {{s.netcode}}</td>
+    <td> {{s.lookupcode}}</td>
+    <td> {{s.latitude}}</td>
+    <td> {{s.longitude}}</td>
+  </tr>
+  {{/each}}
+</table>
+
+
+{{outlet}}

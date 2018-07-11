@@ -1,0 +1,40 @@
+
+
+<h3>Telemetry Connections</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Type</th>
+    <th>On</th>
+    <th>Off</th>
+    <th>Rank 1</th>
+    <th>Rank 2</th>
+    <th>Notes</th>
+    <th>Created By</th>
+    <th>Created At</th>
+    <th>Modified By</th>
+    <th>Modified At</th>
+    <th>Node 1</th>
+    <th>Node2</th>
+  </tr>
+  {{#each model as |s|}}
+  <tr>
+    <td>{{s.id}}</td>
+    <td>{{s.connectiontype}}</td>
+    <td>{{moment-format (utc s.ondate)}}</td>
+    <td>{{if s.offdate (moment-format (utc s.offdate))}}</td>
+    <td>{{s.connectionrank1}}</td>
+    <td>{{s.connectionrank2}}</td>
+    <td>{{s.notes}}</td>
+    <td>{{s.createdby}}</td>
+    <td>{{moment-format (utc s.datecreated)}}</td>
+    <td>{{s.modifiedby}}</td>
+    <td>{{moment-format (utc s.datemodified)}}</td>
+    <td>{{#link-to 'telemetry.nodes.detail' s.telnode1.id }}Node: {{s.telnode1.id}}{{/link-to}}</td>
+    <td>{{#link-to 'telemetry.nodes.detail' s.telnode2.id }}Node: {{s.telnode2.id}}{{/link-to}}</td>
+  </tr>
+  {{/each}}
+</table>
+
+{{outlet}}
