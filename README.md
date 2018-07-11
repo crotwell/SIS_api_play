@@ -1,7 +1,6 @@
 # sis-play
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Simple exercise Ember application to play with the new SIS Web Service API. See [https://anss-sis.scsn.org].
 
 ## Prerequisites
 
