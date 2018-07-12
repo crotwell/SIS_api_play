@@ -70,10 +70,14 @@ export default Controller.extend({
         this.set('failureMessage', "ok");
         // don't need password anymore
         this.set('password', "");
-      }).catch( e => {
-        console.log("Unsuccessful login: "+e);
+      }).catch( reason => {
+        let message = reason.error || reason;
+        if (reason.status) {
+          message = reason.status+" "+reason.statusText+" "+reason.text;
+        }
+        console.log("Unsuccessful login: "+message);
         this.set('myoldToken', null);
-        this.set('failureMessage', e);
+        this.set('failureMessage', message);
       });
     }
   }
