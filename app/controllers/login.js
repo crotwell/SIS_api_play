@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { inject } from '@ember/service';
+import moment from 'moment';
 
 export default Controller.extend({
   init: function () {
@@ -23,6 +24,10 @@ export default Controller.extend({
   }),
   prettyTokenPayload: computed('decodedToken', function() {
     return JSON.stringify(this.get('decodedToken.payload'), null, 2);
+  }),
+  isTokenExpired: computed('decodedToken', function() {
+    return this.get('decodedToken.payload.exp')
+      && moment.utc(this.get('decodedToken.payload.exp').isBefore(moment.utc()));
   }),
   decodedToken: computed('myoldToken', function() {
     if (this.get('myoldToken') && this.get('myoldToken').length > 0) {
