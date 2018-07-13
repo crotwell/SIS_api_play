@@ -15,7 +15,7 @@
 {{#if isLoggedIn}}
 <h3>Login Successful</h3>
 {{else}}
-<h3>Login Failed {{#if isTokenExpired}}Token Expired{{/if}}</h3>
+<h3>Login Failed {{#if isTokenExpired}} - Token Expired{{/if}}</h3>
 Message: <code>{{failureMessage}}</code>
 
 {{/if}}

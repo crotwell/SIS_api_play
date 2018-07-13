@@ -49,11 +49,11 @@ module.exports = function(environment) {
   }
 
   ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: 'https://anss-sis.scsn.org/sistest/api/v1/token/auth/',
+    serverTokenEndpoint: 'https://anss-sis.scsn.org/sistest/api/v1/token/auth',
     refreshAccessTokens: true,
-    serverTokenRefreshEndpoint: 'https://anss-sis.scsn.org/sistest/api/v1/token/refresh/',
+    serverTokenRefreshEndpoint: 'https://anss-sis.scsn.org/sistest/api/v1/token/refresh',
     refreshLeeway: 300, // refresh 5 minutes (300 seconds) before expiration
-    authorizationPrefix: 'JWT ', // Prefix added to each API request
+    //authorizationPrefix: 'JWT ', // Prefix added to each API request
   };
 
   return ENV;

@@ -27,7 +27,7 @@ export default Controller.extend({
   }),
   isTokenExpired: computed('decodedToken', function() {
     return this.get('decodedToken.payload.exp')
-      && moment.utc(this.get('decodedToken.payload.exp').isBefore(moment.utc()));
+      && moment.utc(this.get('decodedToken.payload.exp')).isBefore(moment.utc());
   }),
   decodedToken: computed('myoldToken', function() {
     if (this.get('myoldToken') && this.get('myoldToken').length > 0) {
