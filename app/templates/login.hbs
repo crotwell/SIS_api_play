@@ -1,5 +1,5 @@
 
-{{#if isLoggedIn}}
+{{#if session.isAuthenticated}}
 <button {{action "invalidate"}}>Logout</button>
 {{else}}
 <form {{action 'authenticate' on='submit'}}>
@@ -11,8 +11,7 @@
 </form>
 {{/if}}
 
-
-{{#if isLoggedIn}}
+{{#if session.isAuthenticated}}
 <h3>Login Successful</h3>
 {{else}}
 <h3>Login Failed {{#if isTokenExpired}} - Token Expired{{/if}}</h3>

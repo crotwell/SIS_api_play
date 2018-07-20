@@ -7,6 +7,7 @@ export default DS.Model.extend({
   connectionrank1: DS.attr('string'),
   connectionrank2: DS.attr('string'),
   notes: DS.attr('string'),
+  connectionSettings: DS.attr(),
   createdby: DS.attr('string'),
   datecreated: DS.attr('date'),
   modifiedby: DS.attr('string'),

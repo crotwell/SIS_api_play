@@ -1,7 +1,7 @@
 
-
 <table>
   <tr>
+      <th>id</th>
       <th>equipmentid</th>
       <th>category</th>
       <th>modelname</th>
@@ -16,6 +16,7 @@
   </tr>
   {{#each model as |s|}}
   <tr>
+    <td>{{#link-to 'equipment-installations.detail' s.id }}{{s.id}}{{/link-to}}</td>
     <td> {{s.equipmentid}}</td>
     <td> {{s.category}}</td>
     <td> {{s.modelname}}</td>
@@ -30,6 +31,5 @@
   </tr>
   {{/each}}
 </table>
-
 
 {{outlet}}

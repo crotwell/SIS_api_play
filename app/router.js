@@ -8,22 +8,25 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('sites', function() {
+  this.route('telemetry', function() {});
+  this.route('equip-installations');
+
+  this.route('equipment-installations', function() {
+    this.route('detail',
+      {path: ':equipment_installation_id'});
+  });
+  this.route('organizations', function() {
+    this.route('detail', {path: ':organization_id'});
+  });
+  this.route('site-epochs', function() {
     this.route('detail', {path: ':site_epoch_id'});
   });
-  this.route('telemetry', function() {
-    this.route('connections', function() {
-      this.route('detail',
-        {path: ':telemetry_connection_id'});
-    });
-    this.route('nodes', function() {
-      this.route('detail',
-        {path: ':telemetry_node_id'});
-    });
+
+  this.route('telemetry-nodes', function() {
+    this.route('detail', {path: ':telemetry_node_id'});
   });
-  this.route('equip-installations', function() {
-    this.route('detail',
-      {path: ':equip_installation_id'});
+  this.route('telemetry-connections', function() {
+    this.route('detail', {path: ':telemetry_connection_id'});
   });
 });
 

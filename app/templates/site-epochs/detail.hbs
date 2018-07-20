@@ -1,0 +1,20 @@
+
+
+<h3>Site Epoch:</h3>
+<table>
+   <tr><th>ID</th><td>{{model.id}}</td></tr>
+   <tr><th>Codes</th><td> {{model.netcode}}.{{model.lookupcode}}</td></tr>
+   <tr><th>Location Description</th><td>{{s.locationdescription}}</td></tr>
+   <tr><th>Site Name</th><td>{{s.sitename}}</td></tr>
+   <tr><th>On Date</th><td>{{moment-format (utc model.ondate)}}</td></tr>
+   <tr><th>Lat/Lon</th><td>{{model.latitude}}/{{model.longitude}}</td></tr>
+   <tr><th>Elevation</th><td>{{model.elevation}}</td></tr>
+   <tr><th>SiteTypes</th><td>{{model.sitetypes}}</td></tr>
+   <tr><th>TelemetryTypes</th><td>{{model.telemetrytypes}}</td></tr>
+   <tr><th>Operators (todo)</th><td>{{model.operators}}</td></tr>
+ </table>
+
+
+ {{raw-object-display raw=model}}
+ 
+{{outlet}}

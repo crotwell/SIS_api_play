@@ -1,0 +1,33 @@
+
+<h3>Site Epochs</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Codes</th>
+    <th>LocationDescription</th>
+    <th>SiteName</th>
+    <th>On Date</th>
+    <th>Lat/Lon</th>
+    <th>Elevation</th>
+    <th>SiteType</th>
+    <th>TelemtryType</th>
+    <th>Operators</th>
+  </tr>
+  {{#each model as |s|}}
+    <tr>
+      <td>{{#link-to 'site-epochs.detail' s.id }}{{s.id}}{{/link-to}}</td>
+      <td>{{s.netcode}}.{{s.lookupcode}}</td>
+      <td>{{s.locationdescription}}</td>
+      <td>{{s.sitename}}</td>
+      <td>{{moment-format (utc s.ondate) }}</td>
+      <td>{{s.latitude}}/{{s.longitude}}</td>
+      <td>{{s.elevation}}</td>
+      <td>{{s.sitetypes}}</td>
+      <td>{{s.telemetrytypes}}</td>
+      <td>Operators ToDo {{s.siteoperators}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+{{outlet}}

@@ -15,7 +15,8 @@
     <th>Equip Inst.</th>
   </tr>
   {{#each model as |s|}}
-  <tr><td>{{s.id}}</td>
+  <tr>
+    <td>{{#link-to 'telemetry-nodes.detail' s.id }}{{s.id}}{{/link-to}}</td>
     <td>{{s.port}}</td>
     <td>{{s.portdescription}}</td>
     <td>{{s.ipaddresses}}</td>

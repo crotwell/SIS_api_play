@@ -1,0 +1,27 @@
+<h3>Organizations</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Org COde</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Contact</th>
+    <th>Website</th>
+    <th>Namespace</th>
+  </tr>
+
+  {{#each model as |s|}}
+    <tr>
+      <td>{{#link-to 'organizations.detail' s.id }}{{s.id}}{{/link-to}}</td>
+      <td>{{s.orgcode}}</td>
+      <td>{{s.name}}</td>
+      <td>{{s.description}}</td>
+      <td>{{s.contact}}</td>
+      <td><a href={{s.website}}>{{s.website}}</a></td>
+      <td>{{s.namespace}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+{{outlet}}

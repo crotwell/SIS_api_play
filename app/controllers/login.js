@@ -12,9 +12,9 @@ export default Controller.extend({
   },
   session: inject('session'),
   failureMessage: "empty",
-  isLoggedIn: computed('session', 'myoldToken', function() {
-    return this.get('session').isAuthenticated;
-  }),
+  isLoggedIn: computed('session', 'myoldToken', 'isTokenExpired', function() {
+    return this.get('session').isAuthenticated && ! this.isTokenExpired;
+  }).volatile(),
   myoldToken: null,
   prettyToken: computed('decodedToken', function() {
     return JSON.stringify(this.get('decodedToken'), null, 2);
@@ -28,7 +28,7 @@ export default Controller.extend({
   isTokenExpired: computed('decodedToken', function() {
     return this.get('decodedToken.payload.exp')
       && moment.utc(this.get('decodedToken.payload.exp')).isBefore(moment.utc());
-  }),
+  }).volatile(),
   decodedToken: computed('myoldToken', function() {
     if (this.get('myoldToken') && this.get('myoldToken').length > 0) {
       let items = this.get('myoldToken').split('.');

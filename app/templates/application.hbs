@@ -1,10 +1,11 @@
 <div class="menu">
   <ul>
     <li>{{#link-to 'application'}}Home{{/link-to}}</li>
-    <li>{{#link-to 'sites'}}Site Epochs{{/link-to}}</li>
-    <li>{{#link-to 'equip-installations'}}Equip Installations{{/link-to}}</li>
-    <li>{{#link-to 'telemetry.connections'}}Telemetry Connections{{/link-to}}</li>
-    <li>{{#link-to 'telemetry.nodes'}}Telemetry Nodes{{/link-to}}</li>
+    <li>{{#link-to 'organizations'}}Organizations{{/link-to}}</li>
+    <li>{{#link-to 'site-epochs'}}Site Epochs{{/link-to}}</li>
+    <li>{{#link-to 'equipment-installations'}}Equipment Installations{{/link-to}}</li>
+    <li>{{#link-to 'telemetry-connections'}}Telemetry Connections{{/link-to}}</li>
+    <li>{{#link-to 'telemetry-nodes'}}Telemetry Nodes{{/link-to}}</li>
 
   {{#if session.isAuthenticated}}
     <li>{{#link-to 'login'}}Logout{{/link-to}}</li>
