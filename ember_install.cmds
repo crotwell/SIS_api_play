@@ -1,0 +1,5 @@
+
+ember install ember-moment
+ember install ember-simple-auth-token
+ember install ember-simple-auth
+
