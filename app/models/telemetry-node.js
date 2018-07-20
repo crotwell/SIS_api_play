@@ -9,5 +9,5 @@ export default DS.Model.extend({
   modifiedby: DS.attr('string'),
   datemodified: DS.attr('date'),
   siteepoch: DS.belongsTo('site-epoch'),
-  equipinstallepoch: DS.belongsTo('equipment-installation'),
+//equipinstallepoch: DS.belongsTo('equipment-installation'),
 });

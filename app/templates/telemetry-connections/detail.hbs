@@ -3,15 +3,17 @@
 
 <table>
   <tr><td>ID</td><td>{{model.id}}</td></tr>
-  <tr><td>Type</td><td>{{model.type}}</td></tr>
-  <tr><td>Port Desc.</td><td>{{model.portdescription}}</td></tr>
-  <tr><td>IP Addrs</td><td>{{model.ipaddresses}}</td></tr>
+  <tr><td>connectiontype</td><td>{{model.connectiontype}}</td></tr>
+  <tr><td>On Date</td><td>{{moment-format (utc model.ondate)}}</td></tr>
+  <tr><td>Off Date</td><td>{{moment-format (utc model.offdate)}}</td></tr>
+  <tr><td>Connection Rank1</td><td>{{model.connectionrank1}}</td></tr>
+  <tr><td>Connection Rank2</td><td>{{model.connectionrank2}}</td></tr>
   <tr><td>Created By</td><td>{{model.createdby}}</td></tr>
   <tr><td>Date Created</td><td>{{moment-format (utc model.datecreated)}}</td></tr>
   <tr><td>Modified By</td><td>{{model.modifiedby}}</td></tr>
   <tr><td>Date Modified</td><td>{{moment-format (utc model.datemodified)}}</td></tr>
-  <tr><td>Site Epoch</td><td>{{#link-to 'sites.detail' model.siteepoch}}{{model.siteepoch.id}}{{/link-to}}</td></tr>
-  <tr><td>Equip. Install.</td><td>{{#link-to 'equip-installations.detail' model.equipinstallepoch}}{{model.equipinstallepoch.id}}{{/link-to}}</td></tr>
+  <tr><td>Tel Node1</td><td>{{#link-to 'telemetry-nodes.detail' model.telnode1}}{{model.telnode1.id}}{{/link-to}}</td></tr>
+  <tr><td>Tel Node2</td><td>{{#link-to 'telemetry-nodes.detail' model.telnode2}}{{model.telnode2.id}}{{/link-to}}</td></tr>
 </table>
 
 {{raw-object-display raw=model}}
