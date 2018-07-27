@@ -25,7 +25,9 @@
       <td>{{s.elevation}}</td>
       <td>{{s.sitetypes}}</td>
       <td>{{s.telemetrytypes}}</td>
-      <td>Operators ToDo {{s.siteoperators}}</td>
+      <td>{{#each s.siteoperators as |o|}}
+        {{#link-to 'organizations.detail' o }}
+        {{o.orgcode}} {{/link-to}}{{/each}}</td>
     </tr>
   {{/each}}
 </table>
