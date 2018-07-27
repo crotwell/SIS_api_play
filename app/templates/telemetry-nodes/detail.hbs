@@ -15,6 +15,12 @@
 <!--
   <tr><td>Equip. Install.</td><td>{{#link-to 'equipment-installations.detail' model.equipinstallepoch}}{{model.equipinstallepoch.id}}{{/link-to}}</td></tr>
 -->
+  <tr>
+    <td>Connections</td>
+    <td>{{#each model.connections as |c|}}
+      {{#link-to 'telemetry-connections.detail' c}}{{c.id}}{{/link-to}}
+    {{/each}}</td>
+  </tr>
 </table>
 
 {{raw-object-display raw=model}}

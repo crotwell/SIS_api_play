@@ -10,4 +10,5 @@ export default DS.Model.extend({
   datemodified: DS.attr('date'),
   siteepoch: DS.belongsTo('site-epoch'),
 //equipinstallepoch: DS.belongsTo('equipment-installation'),
+  connections: DS.hasMany('telemetry-connection'),
 });

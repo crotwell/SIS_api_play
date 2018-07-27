@@ -12,6 +12,5 @@ export default DS.Model.extend({
   datecreated: DS.attr('date'),
   modifiedby: DS.attr('string'),
   datemodified: DS.attr('date'),
-  telnode1: DS.belongsTo('telemetry-node'),
-  telnode2: DS.belongsTo('telemetry-node'),
+  telemetrynodes: DS.hasMany('telemetry-node'),
 });

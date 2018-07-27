@@ -13,6 +13,7 @@
     <th>Modified On</th>
     <th>Site Epoch</th>
     <th>Equip Inst.</th>
+    <th>Connections</th>
   </tr>
   {{#each model as |s|}}
   <tr>
@@ -29,6 +30,9 @@
 <!--
     <td>{{#link-to 'equip-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
 -->
+    <td>{{#each s.connections as |c|}}
+          {{#link-to 'telemetry-connections.detail' c}}{{c.id}}{{/link-to}}
+        {{/each}}</td>
   </tr>
   {{/each}}
 </table>
