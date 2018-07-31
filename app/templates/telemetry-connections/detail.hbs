@@ -6,8 +6,8 @@
   <tr><td>connectiontype</td><td>{{model.connectiontype}}</td></tr>
   <tr><td>On Date</td><td>{{moment-format (utc model.ondate)}}</td></tr>
   <tr><td>Off Date</td><td>{{moment-format (utc model.offdate)}}</td></tr>
-  <tr><td>Connection Rank1</td><td>{{model.connectionrank1}}</td></tr>
-  <tr><td>Connection Rank2</td><td>{{model.connectionrank2}}</td></tr>
+  <tr><td>Connection Settings</td><td>{{model.connectionsettings.length}} {{#each model.connectionsettings as |c|}} {{c.keyname}} - {{c.value}},{{/each}}</td></tr>
+
   <tr><td>Created By</td><td>{{model.createdby}}</td></tr>
   <tr><td>Date Created</td><td>{{moment-format (utc model.datecreated)}}</td></tr>
   <tr><td>Modified By</td><td>{{model.modifiedby}}</td></tr>

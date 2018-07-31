@@ -7,4 +7,5 @@ export default DS.Model.extend({
   contact: DS.attr('string'),
   website: DS.attr('string'),
   namespace: DS.attr('string'),
+  siteepochs: DS.hasMany('site-epoch'),
 });

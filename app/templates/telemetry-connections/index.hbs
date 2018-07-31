@@ -19,7 +19,7 @@
   </tr>
   {{#each model as |s|}}
   <tr>
-    <td>{{#link-to 'telemetry-connections.detail' s.id }}{{s.id}}{{/link-to}}</td>
+    <td>{{#link-to 'telemetry-connections.detail' s }}{{s.id}}{{/link-to}}</td>
     <td>{{s.connectiontype}}</td>
     <td>{{moment-format (utc s.ondate)}}</td>
     <td>{{if s.offdate (moment-format (utc s.offdate))}}</td>
@@ -31,7 +31,7 @@
     <td>{{s.modifiedby}}</td>
     <td>{{moment-format (utc s.datemodified)}}</td>
     <td>{{#each s.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}}{{/each}}</td>
-    
+
   </tr>
   {{/each}}
 </table>
