@@ -11,10 +11,12 @@
    <tr><th>Elevation</th><td>{{model.elevation}}</td></tr>
    <tr><th>SiteTypes</th><td>{{model.sitetypes}}</td></tr>
    <tr><th>TelemetryTypes</th><td>{{model.telemetrytypes}}</td></tr>
-   <tr><th>Operators (todo)</th><td>{{model.operators}}</td></tr>
+   <tr><th>Operators</th><td>{{#each model.siteoperators as |o|}}{{#link-to 'organizations.detail' o }}Org: {{o.id}}{{/link-to}} {{/each}}</td></tr>
+   <tr><th>Equip Installs</th><td>{{#each model.equipinstallations as |e|}}{{#link-to 'equipment-installations.detail' e }}Equip: {{e.id}}{{/link-to}} {{/each}}</td></tr>
+   <tr><th>Tel Nodes</th><td>{{#each model.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}} {{/each}}</td></tr>
  </table>
 
 
  {{raw-object-display raw=model}}
- 
+
 {{outlet}}

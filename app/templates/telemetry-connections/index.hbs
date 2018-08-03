@@ -8,8 +8,6 @@
     <th>Type</th>
     <th>On</th>
     <th>Off</th>
-    <th>Rank 1</th>
-    <th>Rank 2</th>
     <th>Notes</th>
     <th>Created By</th>
     <th>Created At</th>
@@ -23,8 +21,6 @@
     <td>{{s.connectiontype}}</td>
     <td>{{moment-format (utc s.ondate)}}</td>
     <td>{{if s.offdate (moment-format (utc s.offdate))}}</td>
-    <td>{{s.connectionrank1}}</td>
-    <td>{{s.connectionrank2}}</td>
     <td>{{s.notes}}</td>
     <td>{{s.createdby}}</td>
     <td>{{moment-format (utc s.datecreated)}}</td>

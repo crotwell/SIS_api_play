@@ -14,4 +14,6 @@ export default DS.Model.extend({
   sitetypes: DS.attr('string'),
   telemetrytypes: DS.attr('string'),
   siteoperators: DS.hasMany('Organization'),
+  equipinstallations: DS.hasMany("EquipmentInstallation"),
+  telemetrynodes: DS.hasMany("TelemetryNode"),
 });

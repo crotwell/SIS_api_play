@@ -1,17 +1,16 @@
 
-<ul>
-  <li>equipmentid: {{model.equipmentid}}</li>
-  <li>category: {{model.category}}</li>
-  <li>modelname: {{model.modelname}}</li>
-  <li>serialnumber: {{model.serialnumber}}</li>
-  <li>ondate: {{moment-format (utc model.ondate)}}</li>
-  <li>offdate: {{if model.offdate (moment-format (utc model.offdate))}}</li>
-  <li>siteid: {{model.siteid}}</li>
-  <li>netcode: {{model.netcode}}</li>
-  <li>lookupcode: {{model.lookupcode}}</li>
-  <li>latitude: {{model.latitude}}</li>
-  <li>longitude: {{model.longitude}}</li>
-</ul>
+<table>
+  <tr><th>category</th><td>{{model.category}}</td></tr>
+  <tr><th>modelname</th><td>{{model.modelname}}</td></tr>
+  <tr><th>serialnumber</th><td>{{model.serialnumber}}</td></tr>
+  <tr><th>ondate</th><td>{{moment-format (utc model.ondate)}}</td></tr>
+  <tr><th>offdate</th><td>{{if model.offdate (moment-format (utc model.offdate))}}</td></tr>
+  <tr><th>equipname</th><td>{{model.equipname}}</td></tr>
+  <tr><th>notes</th><td>{{model.notes}}</td></tr>
+  <tr><th>Site Epoch</th><td>{{#link-to 'site-epochs.detail' model.siteepoch }}{{model.siteepoch.id}}{{/link-to}}</td></tr>
+  <tr><th>Tel Nodes</th><td>{{#each model.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}} {{/each}}</td></tr>
+
+</table>
 
 {{raw-object-display raw=model}}
 
