@@ -25,9 +25,16 @@ export default Controller.extend({
   prettyTokenPayload: computed('decodedToken', function() {
     return JSON.stringify(this.get('decodedToken.payload'), null, 2);
   }),
-  isTokenExpired: computed('decodedToken', function() {
-    return this.get('decodedToken.payload.exp')
-      && moment.utc(this.get('decodedToken.payload.exp')).isBefore(moment.utc());
+  expiresAt: computed('decodedToken', function() {
+    if (this.get('decodedToken.payload.exp')) {
+      return moment.utc(moment.unix(this.get('decodedToken.payload.exp')));
+    } else {
+      return null;
+    }
+  }).volatile(),
+  isTokenExpired: computed('expiresAt', function() {
+    return this.get('expiresAt')
+      && this.get('expiresAt').isBefore(moment.utc());
   }).volatile(),
   decodedToken: computed('myoldToken', function() {
     if (this.myoldToken && this.myoldToken.length > 0) {
