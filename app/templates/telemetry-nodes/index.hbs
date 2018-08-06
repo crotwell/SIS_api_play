@@ -26,7 +26,8 @@
     <td>{{s.modifiedby}}</td>
     <td>{{moment-format (utc s.datemodified)}}</td>
     <td>{{#link-to 'site-epochs.detail' s.siteepoch}}{{s.siteepoch.id}}{{/link-to}}</td>
-    <td>broken { {s.equipinstallepoch.id}}</td>
+    <td>{{#link-to 'equipment-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
+    
 <!--
     <td>{{#link-to 'equip-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
 -->
