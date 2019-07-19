@@ -33,8 +33,8 @@ export default Controller.extend({
     }
   }).volatile(),
   isTokenExpired: computed('expiresAt', function() {
-    return this.get('expiresAt')
-      && this.get('expiresAt').isBefore(moment.utc());
+    return this.expiresAt
+      && this.expiresAt.isBefore(moment.utc());
   }).volatile(),
   decodedToken: computed('myoldToken', function() {
     if (this.myoldToken && this.myoldToken.length > 0) {
