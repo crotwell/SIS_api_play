@@ -12,9 +12,9 @@
   <tr><td>Date Created</td><td>{{moment-format (utc model.datecreated)}}</td></tr>
   <tr><td>Modified By</td><td>{{model.modifiedby}}</td></tr>
   <tr><td>Date Modified</td><td>{{moment-format (utc model.datemodified)}}</td></tr>
-  <tr><td>Tel Nodes</td><td>{{#each model.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}} {{/each}}</td></tr>
+  <tr><td>Tel Nodes</td><td>{{#each model.telemetrynodes as |n|}}<LinkTo @route="telemetry-nodes.detail" @model={{n}}>Node: {{n.id}}</LinkTo> {{/each}}</td></tr>
 </table>
 
-{{raw-object-display raw=model}}
+<RawObjectDisplay @raw={{model}} />
 
 {{outlet}}

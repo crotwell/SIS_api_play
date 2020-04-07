@@ -16,7 +16,7 @@
   </tr>
   {{#each model as |s|}}
     <tr>
-      <td>{{#link-to 'site-epochs.detail' s.id }}{{s.id}}{{/link-to}}</td>
+      <td><LinkTo @route="site-epochs.detail" @model={{s.id}}>{{s.id}}</LinkTo></td>
       <td>{{s.netcode}}.{{s.lookupcode}}</td>
       <td>{{s.locationdescription}}</td>
       <td>{{s.sitename}}</td>
@@ -26,8 +26,8 @@
       <td>{{s.sitetypes}}</td>
       <td>{{s.telemetrytypes}}</td>
       <td>{{#each s.siteoperators as |o|}}
-        {{#link-to 'organizations.detail' o }}
-        {{o.orgcode}} {{/link-to}}{{/each}}</td>
+        <LinkTo @route="organizations.detail" @model={{o}}>
+        {{o.orgcode}} </LinkTo>{{/each}}</td>
     </tr>
   {{/each}}
 </table>

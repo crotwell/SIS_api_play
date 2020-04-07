@@ -11,12 +11,12 @@
    <tr><th>Elevation</th><td>{{model.elevation}}</td></tr>
    <tr><th>SiteTypes</th><td>{{model.sitetypes}}</td></tr>
    <tr><th>TelemetryTypes</th><td>{{model.telemetrytypes}}</td></tr>
-   <tr><th>Operators</th><td>{{#each model.siteoperators as |o|}}{{#link-to 'organizations.detail' o }}Org: {{o.id}}{{/link-to}} {{/each}}</td></tr>
-   <tr><th>Equip Installs</th><td>{{#each model.equipinstallations as |e|}}{{#link-to 'equipment-installations.detail' e }}Equip: {{e.id}}{{/link-to}} {{/each}}</td></tr>
-   <tr><th>Tel Nodes</th><td>{{#each model.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}} {{/each}}</td></tr>
+   <tr><th>Operators</th><td>{{#each model.siteoperators as |o|}}<LinkTo @route="organizations.detail" @model={{o}}>Org: {{o.id}}</LinkTo> {{/each}}</td></tr>
+   <tr><th>Equip Installs</th><td>{{#each model.equipinstallations as |e|}}<LinkTo @route="equipment-installations.detail" @model={{e}}>Equip: {{e.id}}</LinkTo> {{/each}}</td></tr>
+   <tr><th>Tel Nodes</th><td>{{#each model.telemetrynodes as |n|}}<LinkTo @route="telemetry-nodes.detail" @model={{n}}>Node: {{n.id}}</LinkTo> {{/each}}</td></tr>
  </table>
 
 
- {{raw-object-display raw=model}}
+ <RawObjectDisplay @raw={{model}} />
 
 {{outlet}}

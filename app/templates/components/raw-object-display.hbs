@@ -28,7 +28,7 @@
       <td>{{rel.key}}</td>
       <td>{{rel.type}}</td>
       <td>{{rel.name}}</td>
-      <td>{{#link-to (concat rel.type "s.detail") (get raw rel.key)}}Link {{get raw (concat rel.key ".id")}}{{/link-to}}</td>
+      <td><LinkTo @route={{concat rel.type "s.detail" }} @model={{get raw rel.key}}>Link {{get raw (concat rel.key ".id")}}</LinkTo></td>
     </tr>
   {{/each}}
 </table>

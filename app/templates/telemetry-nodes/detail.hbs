@@ -10,17 +10,17 @@
   <tr><td>Date Created</td><td>{{moment-format (utc model.datecreated)}}</td></tr>
   <tr><td>Modified By</td><td>{{model.modifiedby}}</td></tr>
   <tr><td>Date Modified</td><td>{{moment-format (utc model.datemodified)}}</td></tr>
-  <tr><td>Site Epoch</td><td>{{#link-to 'site-epochs.detail' model.siteepoch}}{{model.siteepoch.id}}{{/link-to}}</td></tr>
-  <tr><td>Equip. Install.</td><td>{{#link-to 'equipment-installations.detail' model.equipinstallepoch}}{{model.equipinstallepoch.id}}{{/link-to}}</td></tr>
+  <tr><td>Site Epoch</td><td><LinkTo @route="site-epochs.detail" @model={{model.siteepoch}}>{{model.siteepoch.id}}</LinkTo></td></tr>
+  <tr><td>Equip. Install.</td><td><LinkTo @route="equipment-installations.detail" @model={{model.equipinstallepoch}}>{{model.equipinstallepoch.id}}</LinkTo></td></tr>
 
   <tr>
     <td>Connections</td>
     <td>{{#each model.connections as |c|}}
-      {{#link-to 'telemetry-connections.detail' c}}{{c.id}}{{/link-to}}
+      <LinkTo @route="telemetry-connections.detail" @model={{c}}>{{c.id}}</LinkTo>
     {{/each}}</td>
   </tr>
 </table>
 
-{{raw-object-display raw=model}}
+<RawObjectDisplay @raw={{model}} />
 
 {{outlet}}

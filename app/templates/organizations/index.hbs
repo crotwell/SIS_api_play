@@ -13,7 +13,7 @@
 
   {{#each model as |s|}}
     <tr>
-      <td>{{#link-to 'organizations.detail' s.id }}{{s.id}}{{/link-to}}</td>
+      <td><LinkTo @route="organizations.detail" @model={{s.id}}>{{s.id}}</LinkTo></td>
       <td>{{s.orgcode}}</td>
       <td>{{s.name}}</td>
       <td>{{s.description}}</td>

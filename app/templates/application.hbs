@@ -1,22 +1,15 @@
-<<<<<<< HEAD
 <div class="menu">
   <ul>
-    <li>{{#link-to 'application'}}Home{{/link-to}}</li>
-    <li>{{#link-to 'organizations'}}Organizations{{/link-to}}</li>
-    <li>{{#link-to 'site-epochs'}}Site Epochs{{/link-to}}</li>
-    <li>{{#link-to 'equipment-installations'}}Equipment Installations{{/link-to}}</li>
-    <li>{{#link-to 'telemetry-connections'}}Telemetry Connections{{/link-to}}</li>
-    <li>{{#link-to 'telemetry-nodes'}}Telemetry Nodes{{/link-to}}</li>
-=======
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
->>>>>>> a8ee1c5... message
-
+    <li><LinkTo @route="application">Home</LinkTo></li>
+    <li><LinkTo @route="organizations">Organizations</LinkTo></li>
+    <li><LinkTo @route="site-epochs">Site Epochs</LinkTo></li>
+    <li><LinkTo @route="equipment-installations">Equipment Installations</LinkTo></li>
+    <li><LinkTo @route="telemetry-connections">Telemetry Connections</LinkTo></li>
+    <li><LinkTo @route="telemetry-nodes">Telemetry Nodes</LinkTo></li>
   {{#if session.isAuthenticated}}
-    <li>{{#link-to 'login'}}Logout{{/link-to}}</li>
+    <li><LinkTo @route="login">Logout</LinkTo></li>
   {{else}}
-    <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+    <li><LinkTo @route="login">Login</LinkTo></li>
   {{/if}}
   </ul>
 </div>

@@ -14,7 +14,7 @@
   </tr>
   {{#each model as |s|}}
   <tr>
-    <td>{{#link-to 'equipment-installations.detail' s.id }}{{s.id}}{{/link-to}}</td>
+    <td><LinkTo @route="equipment-installations.detail" @model={{s.id}}>{{s.id}}</LinkTo></td>
     <td> {{s.category}}</td>
     <td> {{s.modelname}}</td>
     <td> {{s.serialnumber}}</td>
@@ -22,8 +22,8 @@
     <td> {{if s.offdate (moment-format (utc s.offdate))}}</td>
     <td> {{s.equipname}}</td>
     <td> {{s.notes}}</td>
-    <td>{{#link-to 'site-epochs.detail' model.siteepoch }}{{model.siteepoch.id}}{{/link-to}}</td>
-    <td>{{#each model.telemetrynodes as |n|}}{{#link-to 'telemetry-nodes.detail' n }}Node: {{n.id}}{{/link-to}} {{/each}}</td>
+    <td><LinkTo @route="site-epochs.detail" @model={{model.siteepoch}}>{{model.siteepoch.id}}</LinkTo></td>
+    <td>{{#each model.telemetrynodes as |n|}}<LinkTo @route="telemetry-nodes.detail" @model={{n}}>Node: {{n.id}}</LinkTo> {{/each}}</td>
 
   </tr>
   {{/each}}

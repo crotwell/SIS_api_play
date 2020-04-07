@@ -17,7 +17,7 @@
   </tr>
   {{#each model as |s|}}
   <tr>
-    <td>{{#link-to 'telemetry-nodes.detail' s.id }}{{s.id}}{{/link-to}}</td>
+    <td><LinkTo @route="telemetry-nodes.detail" @model={{s.id}}>{{s.id}}</LinkTo></td>
     <td>{{s.port}}</td>
     <td>{{s.portdescription}}</td>
     <td>{{s.ipaddresses}}</td>
@@ -25,14 +25,14 @@
     <td>{{moment-format (utc s.datecreated)}}</td>
     <td>{{s.modifiedby}}</td>
     <td>{{moment-format (utc s.datemodified)}}</td>
-    <td>{{#link-to 'site-epochs.detail' s.siteepoch}}{{s.siteepoch.id}}{{/link-to}}</td>
-    <td>{{#link-to 'equipment-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
+    <td><LinkTo @route="site-epochs.detail" @model={{s.siteepoch}}>{{s.siteepoch.id}}</LinkTo></td>
+    <td><LinkTo @route="equipment-installations.detail" @model={{s.equipinstallepoch}}>{{s.equipinstallepoch.id}}</LinkTo></td>
     
 <!--
     <td>{{#link-to 'equip-installations.detail' s.equipinstallepoch}}{{s.equipinstallepoch.id}}{{/link-to}}</td>
 -->
     <td>{{#each s.connections as |c|}}
-          {{#link-to 'telemetry-connections.detail' c}}{{c.id}}{{/link-to}}
+          <LinkTo @route="telemetry-connections.detail" @model={{c}}>{{c.id}}</LinkTo>
         {{/each}}</td>
   </tr>
   {{/each}}
