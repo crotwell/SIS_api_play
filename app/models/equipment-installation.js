@@ -1,13 +1,13 @@
-import DS from 'ember-data';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
-export default DS.Model.extend({
-    category: DS.attr('string'),
-    modelname: DS.attr('string'),
-    serialnumber: DS.attr('string'),
-    ondate: DS.attr('date'),
-    offdate: DS.attr('date'),
-    equipname: DS.attr('string'),
-    notes: DS.attr('string'),
-    siteepoch: DS.belongsTo('SiteEpoch'),
-    telemetrynodes: DS.hasMany('TelemetryNode'),
+export default Model.extend({
+    category: attr('string'),
+    modelname: attr('string'),
+    serialnumber: attr('string'),
+    ondate: attr('date'),
+    offdate: attr('date'),
+    equipname: attr('string'),
+    notes: attr('string'),
+    siteepoch: belongsTo('SiteEpoch'),
+    telemetrynodes: hasMany('TelemetryNode'),
 });

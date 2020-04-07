@@ -1,11 +1,11 @@
-import DS from 'ember-data';
+import Model, { attr, hasMany } from '@ember-data/model';
 
-export default DS.Model.extend({
-  orgcode: DS.attr('string'),
-  name: DS.attr('string'),
-  description: DS.attr('string'),
-  contact: DS.attr('string'),
-  website: DS.attr('string'),
-  namespace: DS.attr('string'),
-  siteepochs: DS.hasMany('site-epoch'),
+export default Model.extend({
+  orgcode: attr('string'),
+  name: attr('string'),
+  description: attr('string'),
+  contact: attr('string'),
+  website: attr('string'),
+  namespace: attr('string'),
+  siteepochs: hasMany('site-epoch'),
 });

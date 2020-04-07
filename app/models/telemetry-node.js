@@ -1,14 +1,14 @@
-import DS from 'ember-data';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
-export default DS.Model.extend({
-  port: DS.attr('string'),
-  portdescription: DS.attr('string'),
-  ipaddresses: DS.attr('string'),
-  createdby: DS.attr('string'),
-  datecreated: DS.attr('date'),
-  modifiedby: DS.attr('string'),
-  datemodified: DS.attr('date'),
-  siteepoch: DS.belongsTo('site-epoch'),
-  equipinstallepoch: DS.belongsTo('equipment-installation'),
-  connections: DS.hasMany('telemetry-connection'),
+export default Model.extend({
+  port: attr('string'),
+  portdescription: attr('string'),
+  ipaddresses: attr('string'),
+  createdby: attr('string'),
+  datecreated: attr('date'),
+  modifiedby: attr('string'),
+  datemodified: attr('date'),
+  siteepoch: belongsTo('site-epoch'),
+  equipinstallepoch: belongsTo('equipment-installation'),
+  connections: hasMany('telemetry-connection'),
 });

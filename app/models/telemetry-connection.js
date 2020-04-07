@@ -1,14 +1,14 @@
-import DS from 'ember-data';
+import Model, { attr, hasMany } from '@ember-data/model';
 
-export default DS.Model.extend({
-  connectiontype: DS.attr('string'),
-  ondate: DS.attr('date'),
-  offdate: DS.attr('date'),
-  notes: DS.attr('string'),
-  connectionsettings: DS.attr(),
-  createdby: DS.attr('string'),
-  datecreated: DS.attr('date'),
-  modifiedby: DS.attr('string'),
-  datemodified: DS.attr('date'),
-  telemetrynodes: DS.hasMany('telemetry-node'),
+export default Model.extend({
+  connectiontype: attr('string'),
+  ondate: attr('date'),
+  offdate: attr('date'),
+  notes: attr('string'),
+  connectionsettings: attr(),
+  createdby: attr('string'),
+  datecreated: attr('date'),
+  modifiedby: attr('string'),
+  datemodified: attr('date'),
+  telemetrynodes: hasMany('telemetry-node'),
 });
